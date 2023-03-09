@@ -1,4 +1,4 @@
-Object subclass: Customer [
+"Object subclass: Customer [
     |name|
     Customer class [
         new: cName [
@@ -16,4 +16,22 @@ Object subclass: Customer [
 
 ]
 
-|customer| customer := Customer new: 
+|customer| customer := Customer new: "
+
+Object subclass: Customer [
+	|name|
+	
+	Customer class [
+		new: cName [
+			^super new init: cName
+		]
+	]
+	
+	init: name [
+		name := cName.
+	]
+	
+	toString [
+		^cName
+	]
+]
