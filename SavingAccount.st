@@ -1,4 +1,4 @@
-Account subclass: SavingAccount [
+"Account subclass: SavingAccount [
     |interest|
     SavingAccount class [
         new [
@@ -40,4 +40,23 @@ Account subclass: SavingAccount [
         interest := interest + (balance * rate).
         balance := balance + (balance * rate).
     }
-]
+]"
+
+"SavingsAccount.st"
+"smalltalk class for SavingAccount.java"
+Account subclass: SavingsAccount [
+    | interest |
+
+    init: n customer: c balance: b [
+        number := n.
+        customer := c.
+        balance := b.
+        interest := 0.0.
+    ]
+
+    "Calculates the interest earned on the balance and updates the interest instance variable"
+    accrue: rate [
+        balance := balance + (balance * rate).
+        interest := interest + (balance * rate).
+    ]
+].

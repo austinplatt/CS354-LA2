@@ -1,4 +1,4 @@
-Object subclass: Account [
+"Object subclass: Account [
     |number customer balance|
     Account class [
         new [
@@ -27,4 +27,43 @@ Object subclass: Account [
     toString [
         ^(number asString,':', customer toString,':', balance asString).
     ]
-]
+]"
+
+"gst Account.st"
+"smalltalk class for Account.java"
+Object subclass: Account [
+    |number|
+    |customer|
+    |balance|
+
+    "Abstract method defined in subclasses"
+    Account class [
+        new: n customer: c balance: b [
+            ^self new init: n customer: c balance: b
+        ]
+    ]
+
+    init: n customer:c balance:b [
+        ^self subclassResponsibility
+    ]
+
+    accrue: rate [
+        ^self subclassResponsibility
+    ]
+
+    accBalance [
+        ^balance
+    ]
+
+    deposit: amount [
+        balance:=balance+amount
+    ]
+
+    withdraw: amount [
+        balance:=balance-amount
+    ]
+    asString [
+        ^number asString, ':', customer asString, ':', balance asString.
+    ]
+
+].

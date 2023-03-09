@@ -1,4 +1,4 @@
-Account subclass: CheckingAccount [
+"Account subclass: CheckingAccount [
     CheckingAccount class [
         new [
             ^super new init.
@@ -24,7 +24,19 @@ Account subclass: CheckingAccount [
     ]
 
     accrue: rate {
-        "do nothing, since this is a checking account"
     }
-]
+]"
+
+"CheckingAccount.st"
+"smalltalk class for CheckingAccount.java"
+Account subclass: CheckingAccount [
+    init: n customer: c balance: b [
+        number := n.
+        customer := c.
+        balance:= b.
+    ]
+    "Inherit accrue from parent class"
+    accrue: rate [
+    ]
+].
 
