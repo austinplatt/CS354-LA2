@@ -8,7 +8,7 @@ Object subclass: Customer [
     ]
 
     init: n [
-        name:=n
+        name:=n.
     ]
 
     "Returns the name of the customer object"

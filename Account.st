@@ -18,7 +18,7 @@ Object subclass: Account [
         ^self subclassResponsibility
     ]
 
-    accBalance [
+    currBalance [
         ^balance
     ]
 
