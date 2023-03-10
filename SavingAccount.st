@@ -1,4 +1,7 @@
+"Translated from SavingAccount.java into smalltalk"
+"author: Austin Platt"
 Account subclass: SavingsAccount [
+    "interest on the account"
     | interest |
 
     init: num customer: cstmr balance: bal [
@@ -8,7 +11,7 @@ Account subclass: SavingsAccount [
         interest := 0.0.
     ]
 
-    "Calculates the interest earned on the balance and updates the interest instance variable"
+    "Updates the interest instance variable by calculating the interest earned on the balance."
     accrue: rate [
         balance := balance + (balance * rate).
         interest := interest + (balance * rate).
