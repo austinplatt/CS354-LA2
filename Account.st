@@ -38,12 +38,12 @@ Object subclass: Account [
 
     "Abstract method defined in subclasses"
     Account class [
-        new: n customer: c balance: b [
-            ^self new init: n customer: c balance: b
+        new: n customer: cstmr balance: bal [
+            ^self new init: num customer: cstmr balance: bal
         ]
     ]
 
-    init: n customer:c balance:b [
+    init: num customer:cstmr balance:bal [
         ^self subclassResponsibility
     ]
 

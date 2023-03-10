@@ -3,7 +3,8 @@ Object subclass: Bank [
 
     Bank class [
         new [
-            ^super new init "Initializes an empty Set object for storing Account objects"
+            "creates a blank set object to store Account instances."
+            ^super new init 
         ]
     ]
 
@@ -15,7 +16,7 @@ Object subclass: Bank [
         accounts add: account
     ]
 
-    "Calls the accrue method on each Account object in the accounts set"
+    "Every Account object in the accounts set is given a call to the accrue function."
     accrue: rate [
         accounts do: [ :account | account accrue: rate]
     ]
@@ -29,7 +30,7 @@ Object subclass: Bank [
 ].
    
 |bank| bank:=Bank new.
-|c| c:=Customer new: 'Ann'.
+|cstmr| c:=Customer new: 'Ann'.
 bank add: (CheckingAccount new: '01001' customer: c balance: 100.00).
 bank add: (SavingsAccount new: '01002' customer: c balance: 200.00).
 bank accrue: 0.02.

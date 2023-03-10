@@ -30,10 +30,10 @@
 "CheckingAccount.st"
 "smalltalk class for CheckingAccount.java"
 Account subclass: CheckingAccount [
-    init: n customer: c balance: b [
-        number := n.
-        customer := c.
-        balance:= b.
+    init: num customer: c balance: b [
+        number := num.
+        customer := cstmr.
+        balance:= bal.
     ]
     "Inherit accrue from parent class"
     accrue: rate [
