@@ -1,36 +1,36 @@
 Object subclass: Bank [
     |accounts|
+
     Bank class [
         new [
-            ^super new init
+            ^super new init "Initializes an empty Set object for storing Account objects"
         ]
     ]
 
     init [
-        accounts := Set new.
+        accounts:= Set new
     ]
 
     add: account [
-        accounts add: account.
+        accounts add: account
     ]
 
+    "Calls the accrue method on each Account object in the accounts set"
     accrue: rate [
-        accounts do: [ :account | account accrue: rate].
+        accounts do: [ :account | account accrue: rate]
     ]
 
-    toString [
-        |string| string := ''.
-        accounts do: [ :account | string := string, (account toString), (Character nl asString)].
-        ^string.
+    asString [
+        |r| r:=''.
+        accounts do: [ :account | r:=r, account asString, (Character nl asString)].
+        ^r
     ]
 
-    main [
-        |b c|
-        b := Bank new.
-        c := Customer new setName: 'Ann'.
-        b add: (CheckingAccount new initNumber: '01001' initCustomer: c initBalance: 100.00).
-        b add: (SavingAccount new initNumber: '01002' initCustomer: c initBalance: 200.00).
-        b accrue: 0.02.
-        Transcript show: b toString.
-    ]
-]
+].
+   
+|bank| bank:=Bank new.
+|c| c:=Customer new: 'Ann'.
+bank add: (CheckingAccount new: '01001' customer: c balance: 100.00).
+bank add: (SavingsAccount new: '01002' customer: c balance: 200.00).
+bank accrue: 0.02.
+bank asString printNl

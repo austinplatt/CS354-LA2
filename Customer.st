@@ -19,19 +19,21 @@
 |customer| customer := Customer new: "
 
 Object subclass: Customer [
-	|name|
-	
-	Customer class [
-		new: cName [
-			^super new init: cName
-		]
-	]
-	
-	init: name [
-		name := cName.
-	]
-	
-	toString [
-		^cName
-	]
-]
+    |name|
+
+    Customer class [
+        new: n [
+            ^self new init:n
+        ]
+    ]
+
+    init: n [
+        name:=n
+    ]
+
+    "Returns the name of the customer object"
+    asString [
+	    ^name
+    ]
+
+].
