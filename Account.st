@@ -1,9 +1,15 @@
+"Translated from Account.java into smalltalk"
+"author: Austin Platt"
 Object subclass: Account [
+    "the account number"
     |number|
+    
+    "the customer who owns the account"
     |customer|
+
+    "the current balance on the account"
     |balance|
 
-    "Abstract method defined in subclasses"
     Account class [
         new: num customer: cstmr balance: bal [
             ^self new init: num customer: cstmr balance: bal
@@ -18,6 +24,7 @@ Object subclass: Account [
         ^self subclassResponsibility
     ]
 
+    "all the defined functions related to banking accounts"
     currBalance [
         ^balance
     ]

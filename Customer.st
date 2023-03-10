@@ -1,4 +1,7 @@
+"Translated from Customer.java into smalltalk"
+"author: Austin Platt"
 Object subclass: Customer [
+    "Customers name in the collection"
     |name|
 
     Customer class [
@@ -11,7 +14,6 @@ Object subclass: Customer [
         name:=n.
     ]
 
-    "Returns the name of the customer object"
     asString [
 	    ^name
     ]
